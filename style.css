@@ -66,14 +66,14 @@ header #title {
     height: auto;
 }
 
-#quest button {
+#quest button, #start {
     margin: 0.5rem;
     padding: 0.3rem;
     background: lightslategray;
     border: solid black 2px;
 }
 
-#quest button:hover {
+#quest button:hover, #start:hover {
     margin: 0.5rem;
     padding: 0.3rem;
     background: lightslategray;
