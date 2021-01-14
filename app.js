@@ -20,12 +20,15 @@ let questions = [
     ]
 ];
 
+// let:
+let questScreen = document.getElementById('quest');
+
 // start button:
 let startButton = document.getElementById('start');
 
 startButton.addEventListener('click', function (){
     startButton.style.visibility = 'hidden';
-
+    startGame();
 })
 
 // Function game:
@@ -35,7 +38,10 @@ function startGame(){
 
     for (let question = 1; question < questions[numQuestion].length; question++){
         let createButton = document.createElement('button');
-        createButton.innerHTML = questions[numQuestion][numQuest]
+        questScreen.appendChild(createButton);
+        createButton.innerHTML = questions[numQuestion][numQuest];
+
+        numQuest++;
     }
 
 }
