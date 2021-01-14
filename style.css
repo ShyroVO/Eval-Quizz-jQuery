@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    background: lightslategray;
+}
+
+header {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    height: 4.5rem;
+    background: darkslategrey;
+    color: lightslategray;
+}
+
+header div {
+    padding: 1rem;
+    width: 20%;
+}
+
+header #title {
+    text-shadow: black 0 0 1rem;
+    width: 80%;
+}
+
+#contenue {
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+}
+
+#screen {
+    height: 33rem;
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 2rem;
+    background: darkslategrey;
+    padding: 1rem;
+    color: lightgray;
+}
+
+#screen div {
+    padding: 1rem;
+    font-size: 1rem;
+    border: solid lightgray 1px;
+    border-radius: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#bubbleScreen {
+    font-size: 5rem;
+}
+
+#quest {
+    display: flex;
+    flex-direction: column;
+    border: solid lightgray 1px;
+    width: 100%;
+    height: auto;
+}
+
+#quest button {
+    margin: 0.5rem;
+    padding: 0.3rem;
+    background: lightslategray;
+    border: solid black 2px;
+}
+
+#quest button:hover {
+    margin: 0.5rem;
+    padding: 0.3rem;
+    background: lightslategray;
+    border: solid orange 2px;
+}
