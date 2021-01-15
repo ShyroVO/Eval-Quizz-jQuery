@@ -105,7 +105,7 @@ function game(){
                     questionScreen.innerHTML += "Vous avez: " + points + "pts ! <br> Tout est bon!";
                 }
                 else {
-                    questionScreen.innerHTML += "Vous avez: " + points + " / 8 pts!";
+                    questionScreen.innerHTML += "Vous avez: " + points + " / 10 pts!";
                 }
 
                 startButton.style.visibility = "visible";
@@ -128,4 +128,19 @@ $('#start').click(function (){
     numQuest = 1;
     validation.splice(0, validation.length);
     game();
+})
+
+// Dark mode:
+let option = 0
+let style = document.getElementById('style');
+
+$('#darkMode').click(function (){
+    if (option === 0){
+        style.href = "styleDark.css";
+        option = 1;
+    }
+    else {
+        style.href = "style.css";
+        option = 0;
+    }
 })

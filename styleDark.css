@@ -1,4 +1,4 @@
-/* DAY: green: #D0E09D - pink1: #FFE6C9 - pink2: #E8AFA0 - lightgreen: #E6E296 - brown: #927D6A */
+/* DARK: black: #222831 - darkblue: #30475e - orange: #f2a365 - grey: #ececec */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 
 body {
     font-size: 62.5%;
-    background: #E6E296;
+    background: #30475e;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -18,8 +18,8 @@ header {
     width: 100%;
     text-align: center;
     height: 4.5rem;
-    background: #927D6A;
-    color: #E6E296;
+    background: #222831;
+    color: lightslategray;
 }
 
 header div {
@@ -41,17 +41,17 @@ header #title {
 #screen {
     min-height: 33rem;
     width: 100%;
-    border: solid #927D6A 1px;
+    border: solid black 1px;
     border-radius: 2rem;
-    background: #FFE6C9;
+    background: darkslategrey;
     padding: 1rem;
-    color: #927D6A;
+    color: lightgray;
 }
 
 #screen div {
     padding: 1rem;
     font-size: 1rem;
-    border: solid #927D6A 1px;
+    border: solid lightgray 1px;
     border-radius: 2rem;
     margin-bottom: 0.5rem;
 }
@@ -63,7 +63,7 @@ header #title {
 #quest {
     display: flex;
     flex-direction: column;
-    border: solid #927D6A 1px;
+    border: solid lightgray 1px;
     width: 100%;
     height: auto;
 }
@@ -71,13 +71,14 @@ header #title {
 #quest button, #start {
     margin: 0.5rem;
     padding: 0.3rem;
-    background: #E6E296;
+    background: lightslategray;
     border: solid black 2px;
 }
 
 #quest button:hover, #start:hover {
     margin: 0.5rem;
     padding: 0.3rem;
+    background: lightslategray;
     border: solid orange 2px;
 }
 
