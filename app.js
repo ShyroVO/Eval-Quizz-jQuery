@@ -10,25 +10,31 @@ let questions = [
         "Membrane plasmique / mitochondries /réticulum enoplasmique", "Membrane plasmique / cytoplasme / chromatime", "Membrane plasmique / cytoplasme / noyau"
     ],
     ["Qu'est-ce que l'éthologie ?",
-        "L'étude des végétaux", "L'étude du monde des insectes", "L'étude du comportement animal"
+        "L'étude des végétaux", "L'étude du monde des insectes", "L'étude du comportement animal", "L'étude du comportement Humain"
     ],
     ["Dans quelle ville se trouve la plus ancienne centrale nucléaire française ?",
-        "Creys-Malville", "Fessenheim", "Gravelines"
+        "Creys-Malville", "Fessenheim", "Gravelines", "Fourmies"
     ],
     ["Laquelle de ces plantes est protégée en France ?",
-        "L'Angélique", "L'Ancolie", "L'Anémone sauvage"
+        "L'Angélique", "L'Ancolie", "L'Anémone sauvage", "Le Coquelicot"
     ],
     ["Sur combien de doigt(s) (a chaque jambe) marche un cheval?",
-        "5", "2", "1"
+        "5", "2", "4", "1"
     ],
     ["Que sont les licornes?",
         "Des animaux magiques", "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique", "Un cheval déguisé"
     ],
+    ["Comment s'appelle Toto?",
+        "Toto", "Tutu", 'Titi', 'Tata'
+    ],
+    ["La marque des ordinateur portable de la formation:",
+        "Asus", "Acer", "Lenovo", "eMachine"
+    ]
 ];
 
 let good = ["Naissance", "Acide désoxyribose nucléotide", "Membrane plasmique / cytoplasme / noyau",
     "L'étude du comportement animal", "Fessenheim", "L'Anémone sauvage", "1",
-    "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique",
+    "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique", "Toto", "Lenovo"
 ]
 
 // let:
@@ -84,7 +90,9 @@ function game(){
                     "Questions 5: " + questions[4][0] + "<br> A Fessenheim.<br><br>" +
                     "Questions 6: " + questions[5][0] + "<br> L'Anémone sauvage.<br><br>" +
                     "Questions 7: " + questions[6][0] + "<br> Le cheval marche sur 1 doigt a chaque jambe.<br><br>" +
-                    "Questions 8: " + questions[7][0] + "<br> Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique <br><br>"
+                    "Questions 8: " + questions[7][0] + "<br> Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique <br><br>"+
+                    "Questions 9: " + questions[8][0] + "<br> Toto!<br><br>" +
+                    "Questions 10: " + questions[9][0] + "<br> Lenovo.<br><br>"
                 ;
 
             // Count Point:
@@ -93,7 +101,7 @@ function game(){
                         points ++;
                     }
                 }
-                if (points === 8){
+                if (points === 10){
                     questionScreen.innerHTML += "Vous avez: " + points + "pts ! <br> Tout est bon!";
                 }
                 else {
