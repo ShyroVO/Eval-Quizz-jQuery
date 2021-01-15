@@ -18,13 +18,17 @@ let questions = [
     ["Laquelle de ces plantes est protégée en France ?",
         "L'Angélique", "L'Ancolie", "L'Anémone sauvage"
     ],
-    ["Sur combien de doigt(s) (a chaque jambe) marche un cheval",
+    ["Sur combien de doigt(s) (a chaque jambe) marche un cheval?",
         "5", "2", "1"
-    ]
+    ],
+    ["Que sont les licornes?",
+        "Des animaux magiques", "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique", "Un cheval déguisé"
+    ],
 ];
 
 let good = ["Naissance", "Acide désoxyribose nucléotide", "Membrane plasmique / cytoplasme / noyau",
-    "L'étude du comportement animal", "Fessenheim", "L'Anémone sauvage", "1"
+    "L'étude du comportement animal", "Fessenheim", "L'Anémone sauvage", "1",
+    "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique",
 ]
 
 // let:
@@ -79,7 +83,8 @@ function game(){
                     "Questions 4: " + questions[3][0] + "<br> C'est l'étude du comportement animal.<br><br>" +
                     "Questions 5: " + questions[4][0] + "<br> A Fessenheim.<br><br>" +
                     "Questions 6: " + questions[5][0] + "<br> L'Anémone sauvage.<br><br>" +
-                    "Questions 7: " + questions[6][0] + "<br> Le cheval marche sur 1 doigt a chaque jambe.<br><br>"
+                    "Questions 7: " + questions[6][0] + "<br> Le cheval marche sur 1 doigt a chaque jambe.<br><br>" +
+                    "Questions 8: " + questions[7][0] + "<br> Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique <br><br>"
                 ;
 
             // Count Point:
@@ -88,11 +93,11 @@ function game(){
                         points ++;
                     }
                 }
-                if (points === 7){
+                if (points === 8){
                     questionScreen.innerHTML += "Vous avez: " + points + "pts ! <br> Tout est bon!";
                 }
                 else {
-                    questionScreen.innerHTML += "Vous avez: " + points + "pts !";
+                    questionScreen.innerHTML += "Vous avez: " + points + " / 8 pts!";
                 }
 
                 startButton.style.visibility = "visible";
@@ -107,7 +112,7 @@ function game(){
 }
 
 // Start:
-startButton.addEventListener('click', function (){
+$('#start').click(function (){
     startButton.style.visibility = 'hidden';
     questScreen.innerHTML = "";
     points = 0;

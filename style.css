@@ -80,3 +80,14 @@ header #title {
     background: lightslategray;
     border: solid orange 2px;
 }
+
+@media screen and (min-width: 650px) {
+    #quest {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #quest button {
+        width: 47%;
+    }
+}
