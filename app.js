@@ -22,7 +22,7 @@ let questions = [
         "5", "2", "4", "1"
     ],
     ["Que sont les licornes?",
-        "Des animaux magiques", "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique", "Un cheval déguisé"
+        "Des animaux magiques", "Un animal qui possède (une ou une seul) corne pour cause d'anomalie génétique", "Un cheval déguisé"
     ],
     ["Comment s'appelle Toto?",
         "Toto", "Tutu", 'Titi', 'Tata'
@@ -34,7 +34,7 @@ let questions = [
 
 let good = ["Naissance", "Acide désoxyribose nucléotide", "Membrane plasmique / cytoplasme / noyau",
     "L'étude du comportement animal", "Fessenheim", "L'Anémone sauvage", "1",
-    "Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique", "Toto", "Lenovo"
+    "Un animal qui possède (une ou une seul) corne pour cause d'anomalie génétique", "Toto", "Lenovo"
 ]
 
 // let:
