@@ -17,31 +17,69 @@ let questions = [
     ],
     ["Laquelle de ces plantes est protégée en France ?",
         "L'Angélique", "L'Ancolie", "L'Anémone sauvage"
+    ],
+    ["Sur combien de doigt(s) marche un cheval",
+        "5", "2", "1"
     ]
 ];
 
 // let:
 let questScreen = document.getElementById('quest');
+let questionScreen = document.getElementById('bubbleScreen');
 
 // start button:
 let startButton = document.getElementById('start');
 
 startButton.addEventListener('click', function (){
     startButton.style.visibility = 'hidden';
-    startGame();
+    game();
 })
 
 // Function game:
-function startGame(){
-    let numQuestion = 0;
-    let numQuest = 1;
+let points = 0;
+let validation = [];
+let numQuestion = 0;
+let numQuest = 1;
+
+function game(){
+    questionScreen.innerHTML = questions[numQuestion][0];
 
     for (let question = 1; question < questions[numQuestion].length; question++){
         let createButton = document.createElement('button');
         questScreen.appendChild(createButton);
         createButton.innerHTML = questions[numQuestion][numQuest];
+        createButton.classList.add('reponse');
 
         numQuest++;
+
+        createButton.addEventListener('click', function (){
+            console.log('je passe dans le click');
+            validation.push(createButton.innerHTML);
+            console.log(validation);
+
+            numQuestion++;
+            numQuest= 1;
+            questScreen.innerHTML="";
+
+// END GAME CHECK:
+            if (validation.length === questions.length) {
+                questionScreen.innerHTML=" C'est fini!";
+                console.log("Quizz fini");
+                numQuest = 0;
+
+                for (let reponse = 0; reponse < validation.length; reponse++){
+                    let divRep = document.createElement('div');
+                    questScreen.appendChild(divRep);
+                    divRep.innerHTML = validation[numQuest];
+
+                    numQuest++;
+                }
+            }
+// CHANGE QUESTION:
+            else {
+                game();
+            }
+        })
     }
 
 }

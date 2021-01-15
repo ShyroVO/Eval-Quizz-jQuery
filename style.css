@@ -37,7 +37,7 @@ header #title {
 }
 
 #screen {
-    height: 33rem;
+    min-height: 33rem;
     width: 100%;
     border: solid black 1px;
     border-radius: 2rem;
