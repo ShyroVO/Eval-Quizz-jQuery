@@ -60,7 +60,6 @@ function game(){
 
         $('.reponse').click(function (){
             validation.push(createButton.innerHTML);
-
             numQuestion++;
             numQuest= 1;
             questScreen.innerHTML="";
