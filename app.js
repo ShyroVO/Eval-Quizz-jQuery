@@ -31,14 +31,13 @@ let questions = [
         "Asus", "Acer", "Lenovo", "eMachine"
     ]
 ];
-
 let good = ["Naissance", "Acide désoxyribose nucléotide", "Membrane plasmique / cytoplasme / noyau",
     "L'étude du comportement animal", "Fessenheim", "L'Anémone sauvage", "1",
     "Un animal qui possède (une ou une seul) corne pour cause d'anomalie génétique", "Toto", "Lenovo"
 ]
 
 // let:
-let questScreen = document.getElementById('quest');
+let questScreen = $('#quest');
 let questionScreen = document.getElementById('bubbleScreen');
 
 // start option:
@@ -55,7 +54,7 @@ function game(){
 
     for (let question = 1; question < questions[numQuestion].length; question++){
         let createButton = document.createElement('button');
-        questScreen.appendChild(createButton);
+        questScreen.append('<button class="reponse"></button>');
         createButton.innerHTML = questions[numQuestion][numQuest];
         createButton.classList.add('reponse');
 
