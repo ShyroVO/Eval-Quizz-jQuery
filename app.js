@@ -53,14 +53,12 @@ function game(){
     questionScreen.innerHTML = questions[numQuestion][0];
 
     for (let question = 1; question < questions[numQuestion].length; question++){
-        let createButton = document.createElement('button');
         questScreen.append('<button class="reponse"></button>');
-        createButton.innerHTML = questions[numQuestion][numQuest];
-        createButton.classList.add('reponse');
+        questScreen.text(question[numQuestion][numQuest]);
 
         numQuest++;
 
-        createButton.addEventListener('click', function (){
+        $('.reponse').click(function (){
             validation.push(createButton.innerHTML);
 
             numQuestion++;
