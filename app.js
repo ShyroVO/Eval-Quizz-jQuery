@@ -36,19 +36,27 @@ let good = ["Naissance", "Acide désoxyribose nucléotide", "Membrane plasmique 
     "Un animal qui possède (une ou une seul) corne pour cause d'anomalie génétique", "Toto", "Lenovo"
 ]
 
-// let:
+// Selector:
 let questScreen = $('#quest');
-let questionScreen = document.getElementById('bubbleScreen');
+let questionScreen = $('#bubbleScreen');
 
-// start option:
+// Other:
+let startButton = $('#start');
 let points = 0;
-let startButton = document.getElementById('start');
 
-// Function game:
+// Game:
 let validation = [];
 let numQuestion = 0;
 let numQuest = 1;
 
+function game() {
+    questionScreen.text(questions[numQuestion][0]);
+}
+
+
+
+
+/*
 function game(){
     questionScreen.innerHTML = questions[numQuestion][0];
 
@@ -125,18 +133,23 @@ $('#start').click(function (){
     validation.splice(0, validation.length);
     game();
 })
+ */
+
+// Start button:
+startButton.click( function (){
+    startButton.css('visibility', 'hidden');
+})
 
 // Dark mode:
-let option = 0
-let style = document.getElementById('style');
+let option = 1;
 
-$('#darkMode').click(function (){
-    if (option === 0){
-        style.href = "styleDark.css";
-        option = 1;
+$('#darkMode').click( function (){
+    if (option === 1){
+        $('#style').attr('href', 'styleDark.css');
+        option = 2;
     }
     else {
-        style.href = "style.css";
-        option = 0;
+        $('#style').attr('href', 'style.css');
+        option = 1;
     }
 })
