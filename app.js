@@ -55,7 +55,6 @@ function game() {
     $.each(questions[numQuestion], function (index, value){
         if (index === 0) return;
         questScreen.append('<button class="reponse">' + value + '</button>');
-        questScreen.css('border', 'solid red 1px');
     })
 
     $('.reponse').click( function (){
