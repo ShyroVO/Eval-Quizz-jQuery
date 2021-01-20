@@ -51,25 +51,25 @@ let numQuest = 1;
 
 function game() {
     questionScreen.text(questions[numQuestion][0]);
+
+    $.each(questions[numQuestion], function (index, value){
+        if (index === 0) return;
+        questScreen.append('<button class="reponse">' + value + '</button>');
+        questScreen.css('border', 'solid red 1px');
+
+    })
+
+    $('.reponse').click( function (){
+        validation.push($(this).text());
+        numQuestion++;
+        numQuest = 1;
+        questScreen.html("");
+    })
+
 }
 
-
-
-
 /*
-function game(){
-    questionScreen.innerHTML = questions[numQuestion][0];
-
-    for (let question = 1; question < questions[numQuestion].length; question++){
-        questScreen.append('<button class="reponse"></button>');
-        questScreen.text(question[numQuestion][numQuest]);
-
-        numQuest++;
-
         $('.reponse').click(function (){
-            validation.push(createButton.innerHTML);
-            numQuestion++;
-            numQuest= 1;
             questScreen.innerHTML="";
 
             // END GAME CHECK:
@@ -123,21 +123,17 @@ function game(){
     }
 }
 
-// Start:
-$('#start').click(function (){
-    startButton.style.visibility = 'hidden';
-    questScreen.innerHTML = "";
-    points = 0;
-    numQuestion = 0;
-    numQuest = 1;
-    validation.splice(0, validation.length);
-    game();
-})
  */
 
 // Start button:
 startButton.click( function (){
     startButton.css('visibility', 'hidden');
+    questScreen.html("");
+    points = 0;
+    numQuestion = 0;
+    numQuest =1;
+    validation.splice(0, validation.length);
+    game();
 })
 
 // Dark mode:
