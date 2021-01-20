@@ -56,7 +56,6 @@ function game() {
         if (index === 0) return;
         questScreen.append('<button class="reponse">' + value + '</button>');
         questScreen.css('border', 'solid red 1px');
-
     })
 
     $('.reponse').click( function (){
@@ -64,66 +63,49 @@ function game() {
         numQuestion++;
         numQuest = 1;
         questScreen.html("");
-    })
 
-}
+        // End game Check:
+        if (validation.length === questions.length) {
 
-/*
-        $('.reponse').click(function (){
-            questScreen.innerHTML="";
+            questionScreen.html("C'est fini! <br>")
+            numQuest = 0;
+            questScreen.append('<div id="rep"></div>');
+            $('#rep').text(validation);
 
-            // END GAME CHECK:
-            if (validation.length === questions.length) {
-                questionScreen.innerHTML=" C'est fini! <br>" ;
-                numQuest = 0;
-                let divRep = document.createElement('div');
-                questScreen.appendChild(divRep);
+            questScreen.append('<div id="correct"></div>');
+            $('#correct').html(
+                "Questions 1: " + questions[0][0] + "<br> Phýsis signifie naissance.<br><br>" +
+                "Questions 2: " + questions[1][0] + "<br> ADN signifie Acide désoxyribose nucléotide.<br><br>" +
+                "Questions 3: " + questions[2][0] + "<br> Membrane plasmique / cytoplasme / noyau.<br><br>" +
+                "Questions 4: " + questions[3][0] + "<br> C'est l'étude du comportement animal.<br><br>" +
+                "Questions 5: " + questions[4][0] + "<br> A Fessenheim.<br><br>" +
+                "Questions 6: " + questions[5][0] + "<br> L'Anémone sauvage.<br><br>" +
+                "Questions 7: " + questions[6][0] + "<br> Le cheval marche sur 1 doigt a chaque jambe.<br><br>" +
+                "Questions 8: " + questions[7][0] + "<br> Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique <br><br>"+
+                "Questions 9: " + questions[8][0] + "<br> Toto!<br><br>" +
+                "Questions 10: " + questions[9][0] + "<br> Lenovo.<br><br>"
+            );
 
-                for (let reponse = 0; reponse < validation.length; reponse++){
-                    divRep.innerHTML += validation[numQuest] + " / ";
-                    numQuest++;
+            for (let rep = 0; rep < validation.length; rep++){
+                if (validation[rep] === good[rep]){
+                    points ++;
                 }
-
-                let divCorrect = document.createElement('div');
-                questScreen.appendChild(divCorrect);
-                divCorrect.innerHTML =
-                    "Questions 1: " + questions[0][0] + "<br> Phýsis signifie naissance.<br><br>" +
-                    "Questions 2: " + questions[1][0] + "<br> ADN signifie Acide désoxyribose nucléotide.<br><br>" +
-                    "Questions 3: " + questions[2][0] + "<br> Membrane plasmique / cytoplasme / noyau.<br><br>" +
-                    "Questions 4: " + questions[3][0] + "<br> C'est l'étude du comportement animal.<br><br>" +
-                    "Questions 5: " + questions[4][0] + "<br> A Fessenheim.<br><br>" +
-                    "Questions 6: " + questions[5][0] + "<br> L'Anémone sauvage.<br><br>" +
-                    "Questions 7: " + questions[6][0] + "<br> Le cheval marche sur 1 doigt a chaque jambe.<br><br>" +
-                    "Questions 8: " + questions[7][0] + "<br> Un animal qui possède (une ou une seul) corne pour cause pour cause d'anomalie génétique <br><br>"+
-                    "Questions 9: " + questions[8][0] + "<br> Toto!<br><br>" +
-                    "Questions 10: " + questions[9][0] + "<br> Lenovo.<br><br>"
-                ;
-
-            // Count Point:
-                for (let rep = 0; rep < validation.length; rep++){
-                    if (validation[rep] === good[rep]){
-                        points ++;
-                    }
-                }
-                if (points === 10){
-                    questionScreen.innerHTML += "Vous avez: " + points + "pts ! <br> Tout est bon!";
-                }
-                else {
-                    questionScreen.innerHTML += "Vous avez: " + points + " / 10 pts!";
-                }
-
-                startButton.style.visibility = "visible";
             }
-
-            // CHANGE QUESTION:
+            if (points === 10){
+                questionScreen.html( "C'est fini! <br> Vous avez: " + points + "pts ! <br> Tout est bon!");
+            }
             else {
-                game();
+                questionScreen.html( "C'est fini <br> Vous avez: " + points + " / 10 pts!");
             }
-        })
-    }
-}
 
- */
+            startButton.css('visibility', 'visible');
+        }
+        // CHANGE QUESTION:
+        else {
+            game();
+        }
+    })
+}
 
 // Start button:
 startButton.click( function (){
